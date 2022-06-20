@@ -16,52 +16,19 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "SalesLTCustomertxtFile",
+						"referenceName": "SourceDataSetContainer",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"columnCount",
-						"structure"
+						"childItems"
 					],
 					"storeSettings": {
-						"type": "AzureBlobStorageReadSettings",
+						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
 						"type": "DelimitedTextReadSettings"
 					}
-				}
-			},
-			{
-				"name": "Switch1",
-				"type": "Switch",
-				"dependsOn": [
-					{
-						"activity": "getMetaData",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"on": {
-						"value": "@activity('getMetaData').output.columnCount",
-						"type": "Expression"
-					},
-					"cases": [],
-					"defaultActivities": [
-						{
-							"name": "Fail1",
-							"type": "Fail",
-							"dependsOn": [],
-							"userProperties": [],
-							"typeProperties": {
-								"message": "\"Fail Message\"",
-								"errorCode": "00123"
-							}
-						}
-					]
 				}
 			}
 		],
