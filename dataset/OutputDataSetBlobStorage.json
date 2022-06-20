@@ -13,7 +13,7 @@
 				"folderPath": "output-main",
 				"container": "demodir"
 			},
-			"columnDelimiter": "|",
+			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
