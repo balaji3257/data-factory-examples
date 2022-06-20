@@ -105,16 +105,16 @@
 										"userProperties": [],
 										"typeProperties": {
 											"source": {
-												"type": "BinarySource",
+												"type": "DelimitedTextSource",
 												"storeSettings": {
 													"type": "AzureBlobFSReadSettings",
 													"recursive": true,
 													"wildcardFolderPath": "input",
 													"wildcardFileName": "item().name",
-													"deleteFilesAfterCompletion": false
+													"enablePartitionDiscovery": false
 												},
 												"formatSettings": {
-													"type": "BinaryReadSettings"
+													"type": "DelimitedTextReadSettings"
 												}
 											},
 											"sink": {
@@ -128,11 +128,19 @@
 													"fileExtension": ".txt"
 												}
 											},
-											"enableStaging": false
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
 										},
 										"inputs": [
 											{
-												"referenceName": "Binary1",
+												"referenceName": "DelimitedText2",
 												"type": "DatasetReference"
 											}
 										],
