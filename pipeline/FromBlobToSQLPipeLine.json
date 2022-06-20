@@ -78,7 +78,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_r29",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				],
