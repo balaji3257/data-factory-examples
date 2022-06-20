@@ -1,0 +1,80 @@
+{
+	"name": "ForEachLearning",
+	"properties": {
+		"activities": [
+			{
+				"name": "getMetaData",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "SalesLTCustomertxtFile",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"columnCount",
+						"structure"
+					],
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			},
+			{
+				"name": "Switch1",
+				"type": "Switch",
+				"dependsOn": [
+					{
+						"activity": "getMetaData",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "@activity('getMetaData').output.columnCount",
+						"type": "Expression"
+					},
+					"cases": [],
+					"defaultActivities": [
+						{
+							"name": "Fail1",
+							"type": "Fail",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "\"Fail Message\"",
+								"errorCode": "00123"
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"AnimalArray": {
+				"type": "Array",
+				"defaultValue": [
+					"Dog",
+					"Cat",
+					"Bear"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
