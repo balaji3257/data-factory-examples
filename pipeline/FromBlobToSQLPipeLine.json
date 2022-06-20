@@ -78,7 +78,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "SalesLTCustomertxtFile",
 						"type": "DatasetReference"
 					}
 				],

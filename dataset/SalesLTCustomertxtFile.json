@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "SalesLTCustomertxtFile",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "BlobStorageSalesLTCustomerService",
@@ -14,7 +14,7 @@
 				"folderPath": "input",
 				"container": "demodir"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
