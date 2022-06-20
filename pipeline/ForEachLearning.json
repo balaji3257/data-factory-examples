@@ -124,7 +124,7 @@
 								],
 								"ifTrueActivities": [
 									{
-										"name": "Copy data1",
+										"name": "Pass activity",
 										"type": "Copy",
 										"dependsOn": [],
 										"policy": {
