@@ -56,6 +56,10 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
+								"expression": {
+									"value": "@or(contains(item().name, '.txt'),contains(item().name, '.json'))",
+									"type": "Expression"
+								},
 								"ifFalseActivities": [
 									{
 										"name": "Wait1",
