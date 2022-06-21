@@ -1,0 +1,33 @@
+{
+	"name": "SourceJsonFileForLookupActivity",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SourceJsonLinkedServiceLookupActivity",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sourcetable.json",
+				"folderPath": "input",
+				"fileSystem": "demodir"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Id": {
+					"type": "string"
+				},
+				"schema": {
+					"type": "string"
+				},
+				"table": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
