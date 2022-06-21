@@ -5,12 +5,21 @@
 			"referenceName": "SourceJsonLinkedServiceLookupActivity",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"SourceFileNameParam": {
+				"type": "string",
+				"defaultValue": "sourcetable.json"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "sourcetable.json",
+				"fileName": {
+					"value": "@dataset().SourceFileNameParam",
+					"type": "Expression"
+				},
 				"folderPath": "input",
 				"fileSystem": "demodir"
 			}
