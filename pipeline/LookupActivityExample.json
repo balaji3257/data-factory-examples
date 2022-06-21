@@ -55,7 +55,13 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "DelimitedText3",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FilePath": {
+								"value": "@activity('LookupActivity').output.firstRow.file_path",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [
 						"childItems"
