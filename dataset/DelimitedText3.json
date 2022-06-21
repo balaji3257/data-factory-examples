@@ -5,6 +5,11 @@
 			"referenceName": "AzureDataLakeStorage5",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FilePath": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
